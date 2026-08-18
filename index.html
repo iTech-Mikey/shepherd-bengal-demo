@@ -4,287 +4,296 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shepherd & Bengal Pet Services | Dog Walking & Pet Care in Hertfordshire</title>
-  <meta name="description" content="Trusted dog walking, day care, pet sitting and more in Croxley Green, Watford, Rickmansworth, Hemel Hempstead & Kings Langley. Fully insured, DBS checked & canine first aid trained.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0f9f4',
-              100: '#dcf0e4',
-              500: '#2d8a5e',
-              600: '#24704c',
-              700: '#1c5a3d',
-              800: '#164530',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-gradient {
+    :root {
+      --green: #24704c;
+      --green-dark: #1c5a3d;
+      --green-soft: #e8f5ee;
+      --green-pale: #f0f9f4;
+      --text: #1e293b;
+      --muted: #475569;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    svg { width: 20px; height: 20px; flex-shrink: 0; display: block; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 20px; max-width: 960px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+    .mark {
+      width: 36px; height: 36px; border-radius: 999px;
+      background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    nav { display: none; gap: 22px; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 999px; font-weight: 500; font-size: 14px;
+      padding: 10px 18px; border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--green); color: #fff; }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--border); }
+    .header-cta { display: none; }
+    .hero {
       background: linear-gradient(135deg, #f0f9f4 0%, #e8f5ee 50%, #f8fafc 100%);
+      text-align: center; padding: 56px 20px 64px;
+    }
+    .kicker {
+      color: var(--green); font-size: 13px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    h1 { font-size: 34px; line-height: 1.15; letter-spacing: -.02em; margin-bottom: 16px; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .trust {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #f8fafc;
+      padding: 16px 20px;
+    }
+    .trust-row {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px;
+      font-size: 14px; color: var(--muted);
+    }
+    .trust-row span { display: flex; align-items: center; gap: 6px; }
+    .check { width: 16px; height: 16px; color: var(--green); }
+    section { padding: 64px 0; }
+    h2 { font-size: 26px; letter-spacing: -.02em; margin-bottom: 12px; }
+    .center { text-align: center; }
+    .sub { color: var(--muted); max-width: 520px; margin: 0 auto 36px; }
+    .about p { color: var(--muted); max-width: 680px; margin: 0 auto 16px; }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 16px; padding: 22px;
+    }
+    .icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: var(--green-soft); color: var(--green-dark);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+    }
+    .icon svg { width: 22px; height: 22px; }
+    .card h3 { font-size: 18px; margin-bottom: 8px; }
+    .card p { font-size: 14px; color: var(--muted); }
+    .grey { background: #f8fafc; }
+    .creds { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 720px; margin: 0 auto; }
+    .cred {
+      display: flex; gap: 14px; padding: 18px;
+      background: #f8fafc; border: 1px solid var(--border); border-radius: 14px;
+    }
+    .cred-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: #fff; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green); flex-shrink: 0;
+    }
+    .cred h3 { font-size: 16px; }
+    .cred p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .note { text-align: center; font-size: 14px; color: #64748b; max-width: 560px; margin: 28px auto 0; }
+    .area {
+      background: var(--green-pale);
+      border-top: 1px solid #d7eee1;
+      border-bottom: 1px solid #d7eee1;
+      padding: 40px 20px; text-align: center;
+    }
+    .area h2 { font-size: 20px; }
+    .area p { color: var(--muted); }
+    .contact-links { display: grid; gap: 14px; margin: 28px 0 20px; }
+    .phone { font-size: 20px; font-weight: 600; color: var(--green-dark); display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .email { color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 10px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 20px;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      font-size: 14px; color: #64748b;
+    }
+    .foot-brand { display: flex; align-items: center; gap: 8px; }
+    .foot-brand .mark { width: 28px; height: 28px; font-size: 10px; }
+    @media (min-width: 640px) {
+      nav, .header-cta { display: flex; }
+      h1 { font-size: 44px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .creds { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: row; justify-content: space-between; max-width: 960px; margin: 0 auto; }
+    }
+    @media (min-width: 900px) {
+      .cards { grid-template-columns: 1fr 1fr 1fr; }
     }
   </style>
 </head>
-<body class="bg-white text-slate-800 antialiased">
-
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-    <div class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-sm tracking-tight">S&B</div>
-        <span class="font-semibold text-slate-900 tracking-tight">Shepherd & Bengal</span>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <div class="mark">S&B</div>
+        <span>Shepherd & Bengal</span>
       </a>
-      <nav class="hidden sm:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-brand-600 transition">About</a>
-        <a href="#services" class="hover:text-brand-600 transition">Services</a>
-        <a href="#credentials" class="hover:text-brand-600 transition">Credentials</a>
-        <a href="#contact" class="hover:text-brand-600 transition">Contact</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="tel:07736578343" class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium px-4 py-2 rounded-full transition">
-        Call Now
-      </a>
+      <a class="btn btn-primary header-cta" href="tel:07736578343">Call now</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero-gradient">
-    <div class="max-w-5xl mx-auto px-5 py-16 sm:py-24 text-center">
-      <p class="text-brand-600 font-medium text-sm tracking-wide uppercase mb-3">Hemel Hempstead · Croxley Green · Kings Langley & surrounding areas</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-5">
-        We’re just mad about pets
-      </h1>
-      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-        Reliable dog walking, day care and pet sitting from a local team who treat every animal like one of their own.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="tel:07736578343" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-3 rounded-full transition shadow-sm">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+  <section class="hero">
+    <p class="kicker">Hemel Hempstead · Croxley Green · Kings Langley & surrounding areas</p>
+    <h1>We’re just mad about pets</h1>
+    <p class="lead">Reliable dog walking, day care and pet sitting from a local team who treat every animal like one of their own.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:07736578343">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        07736 578 343
+      </a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="trust-row wrap">
+      <span><svg class="check" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Fully insured</span>
+      <span><svg class="check" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> DBS checked</span>
+      <span><svg class="check" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Canine first aid trained</span>
+      <span><svg class="check" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Established 2015</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about center">
+      <h2>About Shepherd & Bengal</h2>
+      <p>Shepherd and Bengal Pet Services is driven by a huge passion for animals. Pets are important to us — and we know they’re important to you. We offer a flexible range of services so your pets get the quality time and attention they need while you get on with life.</p>
+      <p>Amy McAlpine has grown up around animals all her life. She currently shares her home with two German Shepherds, four cats, two guinea pigs and a group of marine fish. After years in an office-based role she decided to build a business around the things she loves most — the outdoors, dogs, and the freedom to care for animals properly.</p>
+    </div>
+  </section>
+
+  <section id="services" class="grey">
+    <div class="wrap">
+      <div class="center">
+        <h2>Our services</h2>
+        <p class="sub">Simple, reliable care for dogs and other pets across Hertfordshire.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3>Dog walking</h3>
+          <p>Group walks (up to 4 dogs) or individual walks, typically 60 minutes. We chat first so we understand your dog’s needs and make sure they’re comfortable with us.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Day visits & day care</h3>
+          <p>Extra care and attention during the day when you’re out. Ideal for dogs that need company, stimulation or a toilet break while you’re at work.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+          <h3>Pet sitting</h3>
+          <p>Home visits so your pets stay comfortable in their own environment. Great for longer absences or when boarding isn’t the right option.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+          <h3>Puppy visits</h3>
+          <p>Extra support for young dogs — toilet training help, company and gentle stimulation while you’re out.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Cat feeding & small pets</h3>
+          <p>Feeding, litter changes and company for cats, rabbits, guinea pigs, birds and other small pets. We look after all creatures great and small.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Dog training</h3>
+          <p>Support with the basics and more. Amy has trained with the Institute of Modern Dog Trainers (IMDT) and brings a calm, practical approach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <div class="center">
+        <h2>Credentials you can trust</h2>
+        <p class="sub">Peace of mind for you and proper care for your pets.</p>
+      </div>
+      <div class="creds">
+        <div class="cred">
+          <div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div>
+            <h3>Fully insured</h3>
+            <p>Covered through Cliverton — specialists in pet care insurance.</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div>
+            <h3>DBS checked</h3>
+            <p>Full Disclosure and Barring Service check completed.</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+          <div>
+            <h3>Canine first aid & CPR</h3>
+            <p>Canine first responder qualification and first aid certificate. We carry first aid kits.</p>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+          <div>
+            <h3>Herts Dog Friendly Award</h3>
+            <p>Nominated for the Hertfordshire Dog Friendly Award 2018.</p>
+          </div>
+        </div>
+      </div>
+      <p class="note">We also use a fully crated, secure van for transport and offer a free initial home visit so you and your pet can meet us first.</p>
+    </div>
+  </section>
+
+  <div class="area">
+    <h2>Service area</h2>
+    <p>Within an 8-mile radius of Croxley Green, Hertfordshire — including Watford, Rickmansworth, Hemel Hempstead and Kings Langley.</p>
+  </div>
+
+  <section id="contact">
+    <div class="wrap center">
+      <h2>Get in touch</h2>
+      <p class="sub">Ready to book a walk, day visit or sitting? Call or email — we’re happy to chat about what your pets need.</p>
+      <div class="contact-links">
+        <a class="phone" href="tel:07736578343">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           07736 578 343
         </a>
-        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium px-6 py-3 rounded-full border border-slate-200 transition">
-          Get in touch
+        <a class="email" href="mailto:info@shepherdandbengal.com">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          info@shepherdandbengal.com
         </a>
       </div>
+      <p class="note">Free initial visit available so we can meet you and your pets at home.</p>
     </div>
   </section>
 
-  <!-- Trust bar -->
-  <section class="border-y border-slate-100 bg-slate-50/50">
-    <div class="max-w-5xl mx-auto px-5 py-5">
-      <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-600">
-        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Fully insured</span>
-        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> DBS checked</span>
-        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Canine first aid trained</span>
-        <span class="flex items-center gap-1.5"><svg class="w-4 h-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Established 2015</span>
-      </div>
+  <footer>
+    <div class="foot-brand">
+      <div class="mark">S&B</div>
+      <span>Shepherd & Bengal Pet Services</span>
     </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-5">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 tracking-tight">About Shepherd & Bengal</h2>
-        <p class="text-slate-600 leading-relaxed mb-6">
-          Shepherd and Bengal Pet Services is driven by a huge passion for animals. Pets are important to us — and we know they’re important to you. We offer a flexible range of services so your pets get the quality time and attention they need while you get on with life.
-        </p>
-        <p class="text-slate-600 leading-relaxed">
-          Amy McAlpine has grown up around animals all her life. She currently shares her home with two German Shepherds, four cats, two guinea pigs and a group of marine fish. After years in an office-based role she decided to build a business around the things she loves most — the outdoors, dogs, and the freedom to care for animals properly.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-16 sm:py-20 bg-slate-50">
-    <div class="max-w-5xl mx-auto px-5">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight">Our Services</h2>
-        <p class="text-slate-600 max-w-xl mx-auto">Simple, reliable care for dogs and other pets across Hertfordshire.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Dog Walking -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Dog Walking</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Group walks (up to 4 dogs) or individual walks, typically 60 minutes. Perfect when work, health or other commitments keep you from getting out. We chat first so we understand your dog’s needs and make sure they’re comfortable with us.
-          </p>
-        </div>
-
-        <!-- Day Visits / Day Care -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Day Visits & Day Care</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Extra care and attention during the day when you’re out. Ideal for dogs that need company, stimulation or a toilet break while you’re at work.
-          </p>
-        </div>
-
-        <!-- Pet Sitting -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Pet Sitting</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Home visits so your pets stay comfortable in their own environment. Great for longer absences or when boarding isn’t the right option.
-          </p>
-        </div>
-
-        <!-- Puppy visits -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Puppy Visits</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Extra support for young dogs — toilet training help, company and gentle stimulation while you’re out.
-          </p>
-        </div>
-
-        <!-- Cat feeding & more -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Cat Feeding & Small Pets</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Feeding, litter changes and company for cats, rabbits, guinea pigs, birds and other small pets. We look after all creatures great and small.
-          </p>
-        </div>
-
-        <!-- Training -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-          <div class="w-11 h-11 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg text-slate-900 mb-2">Dog Training</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Support with the basics and more. Amy has trained with the Institute of Modern Dog Trainers (IMDT) and brings a calm, practical approach.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Credentials -->
-  <section id="credentials" class="py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-5">
-      <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight">Credentials you can trust</h2>
-        <p class="text-slate-600 max-w-xl mx-auto">Peace of mind for you and proper care for your pets.</p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
-        <div class="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-          <div class="shrink-0 w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-slate-900">Fully insured</h3>
-            <p class="text-sm text-slate-600 mt-1">Covered through Cliverton — specialists in pet care insurance.</p>
-          </div>
-        </div>
-        <div class="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-          <div class="shrink-0 w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-slate-900">DBS checked</h3>
-            <p class="text-sm text-slate-600 mt-1">Full Disclosure and Barring Service check completed.</p>
-          </div>
-        </div>
-        <div class="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-          <div class="shrink-0 w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-slate-900">Canine first aid & CPR</h3>
-            <p class="text-sm text-slate-600 mt-1">Canine first responder qualification and first aid certificate. We carry first aid kits.</p>
-          </div>
-        </div>
-        <div class="flex gap-4 p-5 rounded-xl bg-slate-50 border border-slate-100">
-          <div class="shrink-0 w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-brand-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-slate-900">Herts Dog Friendly Award</h3>
-            <p class="text-sm text-slate-600 mt-1">Nominated for the Hertfordshire Dog Friendly Award 2018.</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="text-center text-sm text-slate-500 mt-8 max-w-2xl mx-auto">
-        We also use a fully crated, secure van for transport and offer a free initial home visit so you and your pet can meet us first.
-      </p>
-    </div>
-  </section>
-
-  <!-- Area -->
-  <section class="py-12 bg-brand-50 border-y border-brand-100">
-    <div class="max-w-5xl mx-auto px-5 text-center">
-      <h2 class="text-xl font-semibold text-slate-900 mb-2">Service area</h2>
-      <p class="text-slate-600">
-        Within an 8-mile radius of Croxley Green, Hertfordshire — including Watford, Rickmansworth, Hemel Hempstead and Kings Langley.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-5">
-      <div class="max-w-xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3 tracking-tight">Get in touch</h2>
-        <p class="text-slate-600 mb-8">
-          Ready to book a walk, day visit or sitting? Call or email — we’re happy to chat about what your pets need.
-        </p>
-
-        <div class="space-y-4 mb-10">
-          <a href="tel:07736578343" class="flex items-center justify-center gap-3 text-lg font-medium text-brand-700 hover:text-brand-800 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            07736 578 343
-          </a>
-          <a href="mailto:info@shepherdandbengal.com" class="flex items-center justify-center gap-3 text-slate-700 hover:text-brand-700 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            info@shepherdandbengal.com
-          </a>
-        </div>
-
-        <p class="text-sm text-slate-500">
-          Free initial visit available so we can meet you and your pets at home.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-slate-100 py-8">
-    <div class="max-w-5xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-      <div class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-full bg-brand-600 flex items-center justify-center text-white text-xs font-bold">S&B</div>
-        <span>Shepherd & Bengal Pet Services</span>
-      </div>
-      <p>Established 2015 · Hertfordshire</p>
-    </div>
+    <p>Established 2015 · Hertfordshire</p>
   </footer>
-
 </body>
 </html>
