@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shepherd & Bengal Pet Services | Dog Walking & Pet Care in Hertfordshire</title>
+  <title>Shepherd & Bengal Pet Services | Dog Daycare, Boarding & Walking</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,13 +26,13 @@
     .btn-ghost { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.45); }
     .btn-dark { background:var(--ink); color:#fff; }
     .header-cta { display:none; }
-    .hero { background:radial-gradient(ellipse 70% 55% at 85% 10%, rgba(47,196,187,.28), transparent 55%), radial-gradient(ellipse 50% 45% at 8% 95%, rgba(255,138,101,.18), transparent 50%), var(--hero); color:#fff; padding:80px 0 88px; text-align:center; position:relative; overflow:hidden; }
-    .kicker { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:18px; }
+    .hero { background:radial-gradient(ellipse 70% 55% at 85% 10%, rgba(47,196,187,.28), transparent 55%), radial-gradient(ellipse 50% 45% at 8% 95%, rgba(255,138,101,.18), transparent 50%), var(--hero); color:#fff; padding:80px 0 88px; text-align:center; }
+    .kicker { font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:18px; }
     h1 { font-family:Fraunces,Georgia,serif; font-size:clamp(36px,7vw,58px); line-height:1.08; font-weight:600; margin-bottom:16px; }
     h1 em { font-style:italic; color:var(--teal); }
     .lead { font-size:18px; color:rgba(255,255,255,.82); max-width:520px; margin:0 auto 30px; }
     .hero-actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
-    .trust { background:var(--warm); border-bottom:1px solid var(--line); padding:16px 0; }
+    .trust { background:var(--warm); padding:16px 0; }
     .trust-row { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 28px; font-size:14px; color:var(--muted); font-weight:500; }
     .trust-row span { display:inline-flex; align-items:center; gap:8px; }
     .tick { width:20px; height:20px; border-radius:50%; background:var(--teal-soft); color:var(--teal-dark); display:grid; place-items:center; }
@@ -40,11 +40,10 @@
     section { padding:72px 0; }
     .section-head { text-align:center; max-width:620px; margin:0 auto 40px; }
     .eyebrow { display:inline-block; color:var(--peach); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
-    h2 { font-family:Fraunces,Georgia,serif; font-size:clamp(28px,4.5vw,40px); line-height:1.15; font-weight:600; color:var(--ink); margin-bottom:12px; }
+    h2 { font-family:Fraunces,Georgia,serif; font-size:clamp(28px,4.5vw,40px); font-weight:600; color:var(--ink); margin-bottom:12px; }
     .sub { color:var(--muted); font-size:17px; }
-    .about-card { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:32px 28px; box-shadow:0 8px 30px rgba(44,51,48,.04); }
+    .about-card { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:32px 28px; }
     .about-card p { color:var(--muted); margin-bottom:16px; }
-    .about-card strong { color:var(--ink); }
     .quote-line { margin-top:22px; padding-top:20px; border-top:1px dashed #d7e6e2; font-family:Fraunces,Georgia,serif; font-style:italic; font-size:22px; color:var(--teal-dark); text-align:center; }
     .services { background:var(--soft); }
     .cards { display:grid; grid-template-columns:1fr; gap:16px; }
@@ -54,21 +53,17 @@
     .icon svg { width:22px; height:22px; }
     .card h3 { font-size:18px; color:var(--ink); margin-bottom:8px; }
     .card p { font-size:15px; color:var(--muted); }
-    .creds { display:grid; grid-template-columns:1fr; gap:14px; max-width:900px; margin:0 auto; }
+    .creds { display:grid; gap:14px; max-width:900px; margin:0 auto; }
     .cred { display:flex; gap:16px; padding:22px; border-radius:18px; background:var(--card); border:1px solid var(--line); }
     .cred-icon { width:44px; height:44px; border-radius:12px; background:var(--teal-soft); color:var(--teal-dark); display:grid; place-items:center; flex-shrink:0; }
-    .cred h3 { font-size:16px; color:var(--ink); margin-bottom:4px; }
-    .cred p { font-size:14px; color:var(--muted); }
-    .note { text-align:center; margin-top:28px; font-size:14.5px; color:var(--muted); }
-    .area { background:radial-gradient(circle at 12% 20%, rgba(47,196,187,.18), transparent 40%), var(--sand); padding:56px 0; text-align:center; }
+    .area { background:var(--sand); padding:56px 0; text-align:center; }
     .contact-box { max-width:680px; margin:0 auto; text-align:center; background:var(--card); border:1px solid var(--line); border-radius:28px; padding:40px 24px; }
     .contact-links { display:grid; gap:12px; margin:26px 0 8px; }
-    .phone { font-size:26px; font-weight:700; color:var(--ink); display:inline-flex; align-items:center; justify-content:center; gap:10px; }
-    .email { color:var(--muted); display:inline-flex; align-items:center; justify-content:center; gap:10px; }
+    .phone { font-size:26px; font-weight:700; color:var(--ink); }
+    .email { color:var(--muted); }
     .contact-actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:26px; }
     footer { padding:32px 0 40px; color:var(--muted); font-size:14px; }
     .footer-inner { display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center; width:min(1080px, calc(100% - 36px)); margin:0 auto; }
-    .foot-brand { display:flex; align-items:center; gap:12px; font-weight:600; color:var(--ink); }
     .photos { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:8px; }
     .photos img { width:100%; height:150px; object-fit:cover; display:block; border-radius:16px; }
     .about-layout { display:grid; gap:20px; max-width:900px; margin:0 auto; }
@@ -80,7 +75,6 @@
       .photos img { height:180px; }
       .about-layout { grid-template-columns:1.15fr .85fr; }
       .about-photo { height:100%; min-height:280px; }
-      .footer-inner { flex-direction:row; justify-content:space-between; text-align:left; }
     }
     @media (min-width:1000px) { .cards { grid-template-columns:1fr 1fr 1fr; } }
   </style>
@@ -93,17 +87,15 @@
       <a class="btn btn-primary header-cta" href="tel:07736578343">Call now</a>
     </div>
   </header>
-  <section class="hero">
-    <div class="wrap">
-      <p class="kicker">Croxley Green · Hemel Hempstead · Kings Langley</p>
-      <h1>We’re just <em>mad</em> about pets</h1>
-      <p class="lead">Local dog walking, day care and pet sitting from someone who genuinely loves animals — and treats yours like family.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:07736578343">07736 578 343</a>
-        <a class="btn btn-ghost" href="#services">See what we offer</a>
-      </div>
+  <section class="hero"><div class="wrap">
+    <p class="kicker">Croxley Green · Hemel Hempstead · Kings Langley</p>
+    <h1>We’re just <em>mad</em> about pets</h1>
+    <p class="lead">Local dog daycare, boarding and walking from someone who genuinely loves dogs — and treats yours like family.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:07736578343">07736 578 343</a>
+      <a class="btn btn-ghost" href="#services">See what we offer</a>
     </div>
-  </section>
+  </div></section>
   <div class="trust"><div class="trust-row wrap">
     <span><span class="tick"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span> Fully insured</span>
     <span><span class="tick"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span> DBS checked</span>
@@ -117,10 +109,10 @@
     <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=70" alt="Dog on a walk">
   </div>
   <section id="about"><div class="wrap">
-    <div class="section-head"><p class="eyebrow">About us</p><h2>A proper local pet care business</h2><p class="sub">Built around real love for animals — not a corporate pack-walking machine.</p></div>
+    <div class="section-head"><p class="eyebrow">About us</p><h2>A proper local dog care business</h2></div>
     <div class="about-layout">
       <div class="about-card">
-        <p>Shepherd and Bengal Pet Services is driven by a huge passion for animals. Pets are important to us — and we know they’re important to you.</p>
+        <p>Shepherd and Bengal Pet Services is driven by a huge passion for animals. Dogs are important to us — and we know they’re important to you.</p>
         <p><strong>Amy McAlpine</strong> has grown up around animals all her life. She shares her home with two German Shepherds, four cats, two guinea pigs and a group of marine fish.</p>
         <p class="quote-line">“All creatures great and small.”</p>
       </div>
@@ -128,14 +120,11 @@
     </div>
   </div></section>
   <section id="services" class="services"><div class="wrap">
-    <div class="section-head"><p class="eyebrow">What we do</p><h2>Care that actually feels personal</h2><p class="sub">Clear, reliable services for dogs and other pets across Hertfordshire.</p></div>
+    <div class="section-head"><p class="eyebrow">What we do</p><h2>Three simple services</h2><p class="sub">Dog daycare, boarding and walking — nothing extra.</p></div>
     <div class="cards">
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Dog walking</h3><p>Group walks (up to 4 dogs) or individual walks, typically 60 minutes.</p></div>
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Day visits & day care</h3><p>Extra care and company during the day when you’re out.</p></div>
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div><h3>Pet sitting</h3><p>Home visits so your pets stay comfortable in their own environment.</p></div>
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><h3>Puppy visits</h3><p>Extra support for young dogs while you’re out.</p></div>
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Small pet visits</h3><p>Feeding and company for rabbits, guinea pigs, birds and other small pets.</p></div>
-      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Dog training support</h3><p>Amy has trained with the Institute of Modern Dog Trainers (IMDT).</p></div>
+      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Dog Daycare</h3><p>Daytime care and company while you’re at work or out. Plenty of exercise, rest and attention.</p></div>
+      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div><h3>Dog Boarding</h3><p>Overnight stays in a home environment so your dog is looked after while you’re away.</p></div>
+      <div class="card"><div class="icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Dog Walking</h3><p>Regular walks — group (up to 4 dogs) or one-to-one. We meet first so we understand your dog.</p></div>
     </div>
   </div></section>
   <section id="credentials"><div class="wrap">
@@ -146,12 +135,11 @@
       <div class="cred"><div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div><h3>Canine first aid & CPR</h3><p>Canine first responder qualification. We carry kits.</p></div></div>
       <div class="cred"><div class="cred-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div><div><h3>Herts Dog Friendly Award</h3><p>Nominated for the Hertfordshire Dog Friendly Award 2018.</p></div></div>
     </div>
-    <p class="note">We use a fully crated, secure van and offer a free initial home visit.</p>
   </div></section>
   <div class="area"><div class="wrap"><h2>Where we work</h2><p>Within an 8-mile radius of Croxley Green, Hertfordshire — including Watford, Rickmansworth, Hemel Hempstead and Kings Langley.</p></div></div>
   <section id="contact"><div class="wrap"><div class="contact-box">
     <p class="eyebrow">Say hello</p><h2>Ready when you are</h2>
-    <p class="sub">Call or email to book a walk, day visit or sitting — or arrange a free meet-and-greet.</p>
+    <p class="sub">Call or email to book daycare, boarding or a walk — or arrange a free meet-and-greet.</p>
     <div class="contact-links">
       <a class="phone" href="tel:07736578343">07736 578 343</a>
       <a class="email" href="mailto:info@shepherdandbengal.com">info@shepherdandbengal.com</a>
@@ -165,5 +153,4 @@
     <div class="foot-brand"><span class="brand"><span class="brand-mark">S&B</span><span class="brand-name">Shepherd & Bengal Pet Services</span></span></div>
     <p>Established 2015 · Hertfordshire</p>
   </div></footer>
-</body>
-</html>
+</body></html>
